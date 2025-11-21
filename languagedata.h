@@ -43,6 +43,15 @@ void loadLuaData(LanguageData &typess,
                  LanguageData &others);
 
 /**********************************************************/
+/* Exprtk Data ********************************************/
+/**********************************************************/
+void loadExprtkData(LanguageData &typess,
+                    LanguageData &keywordss,
+                    LanguageData &builtins,
+                    LanguageData &literalss,
+                    LanguageData &others);
+
+/**********************************************************/
 /* C/C++ Data *********************************************/
 /**********************************************************/
 void loadCppData(LanguageData &typess,

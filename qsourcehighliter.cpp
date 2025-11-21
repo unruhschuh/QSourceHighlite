@@ -127,6 +127,7 @@ void QSourceHighliter::highlightSyntax(const QString &text)
     bool isMake = false;
     bool isAsm = false;
     bool isSQL = false;
+    bool isExprtk = false;
 
     LanguageData keywords{},
                 others{},
@@ -138,6 +139,12 @@ void QSourceHighliter::highlightSyntax(const QString &text)
         case CodeLua :
         case CodeLuaComment :
             loadLuaData(types, keywords, builtin, literals, others);
+            break;
+        case CodeExprtk :
+        case CodeExprtkComment :
+            isExprtk = true;
+            loadExprtkData(types, keywords, builtin, literals, others);
+            comment = QLatin1Char('#');
             break;
         case CodeCpp :
         case CodeCppComment :
@@ -289,7 +296,7 @@ void QSourceHighliter::highlightSyntax(const QString &text)
                 else continue;
             }
             //inline comment
-            if (comment.isNull() && text[i] == QLatin1Char('/')) {
+            if ((comment.isNull() || isExprtk) && text[i] == QLatin1Char('/')) {
                 if((i+1) < textLen){
                     if(text[i+1] == QLatin1Char('/')) {
                         setFormat(i, textLen, formatComment);

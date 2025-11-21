@@ -94,7 +94,9 @@ public:
         CodeLua = 246,
         CodeLuaComment = 247,
         CodeRhai = 248,
-        CodeRhaiComment = 249
+        CodeRhaiComment = 249,
+        CodeExprtk = 250,
+        CodeExprtkComment = 251
     };
     Q_ENUM(Language)
 
