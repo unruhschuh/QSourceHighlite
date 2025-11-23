@@ -260,6 +260,7 @@ void initExprtkData() {
         {('c'), QLatin1String("cout")},
         {('c'), QLatin1String("cerr")},
         {('c'), QLatin1String("clog")},
+        {('c'), QLatin1String("convert")},
         {('s'), QLatin1String("stdin")},
         {('s'), QLatin1String("stdout")},
         {('s'), QLatin1String("stderr")},
